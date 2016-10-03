@@ -1,0 +1,690 @@
+// COMMON //
+@team-color: #D94015; // HEADERS //
+// Zmienne przejscie
+// html, body {
+//     max-width: 100%;
+//     overflow-x: hidden;
+// }
+
+body > section + section {
+    margin-bottom: 55px;
+}
+
+a {
+    .transition(all 0.05s ease-in);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.header {
+    text-align: left;
+    margin: 0 50px 50px;
+
+    h1,
+    h2,
+    h3 {
+        font-weight: 300;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+
+    h2 {
+        font-size: 140px;
+        font-family: 'Black Ops One', cursive;
+    }
+
+    h3 {
+        font-size: 42px;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Condensed", "Open Sans", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #373a3f;
+}
+// MENU //
+
+#menu {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 0;
+    margin-top: 10px;
+
+    .navbar-nav {
+        font-size: 14px;
+
+        > li > a {
+            margin: 0 3px;
+            padding: 18px 32px;
+            color: @navbar-default-color;
+
+            &:hover {
+                background-color: transparent;
+                border-bottom: 3px solid @team-color;
+                color: @gray-lighter;
+            }
+        }
+    }
+}
+// SLIDER //
+
+#slider {
+    .flexslider {
+        margin-top: 0;
+        border-radius: 0;
+        border: 0;
+        overflow: hidden;
+    }
+
+    .carousel-caption {
+        text-align: left;
+
+        h1 {
+            font-size: 76px;
+            color: @gray-lighter;
+            .variable-transition(1.9s);
+        }
+
+        p {
+            color: @gray-lighter;
+        }
+
+        .call_us_now {
+            padding: 16px 32px;
+            border-radius: 0;
+            border: 3px solid @team-color;
+            background-color: transparent;
+            color: @team-color;
+            .variable-transition(1.9s);
+        }
+    }
+}
+// ABOUT US //
+
+#about {
+    .container {
+        margin-bottom: 40px;
+
+        h3 {
+            padding: 20px 0;
+            border-bottom: 1px solid @gray-lighter;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom: 3px solid @team-color;
+            }
+        }
+
+        i {
+            font-size: 70px;
+            .translate-3d(0%;-400%;0%);
+        }
+
+        p {
+            max-width: 100%;
+        }
+    }
+}
+// PARALLAX //
+
+.parallax {
+    color: #fff;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+    display: table;
+
+    .parallax-body {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 40px;
+    }
+}
+
+#parallax {
+    background: url("../img/parallax01.jpg") 50% 0 no-repeat fixed;
+    height: 400px;
+
+    .parallax-body {
+        position: relative;
+
+        &:after {
+            .dark-overlay;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 115px 0;
+        }
+
+        h2 {
+            color: #fff;
+        }
+
+        p {
+            margin: 0 0 20px;
+        }
+
+        a {
+            position: relative;
+            background-color: @team-color;
+            margin: 15px 0;
+            padding: 12px 30px;
+            .basic-transition;
+            color: @brightest-text-color;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+// ADVANTAGES //
+
+#advantages {
+    text-align: center;
+
+    .fa {
+        font-size: 60px;
+        color: @team-color;
+        padding: 15px 0;
+        .transition(all 0.15s ease-out);
+        cursor: pointer;
+    }
+
+    .iconbox:hover .fa {
+        color: #333;
+        .scale(1.2);
+    }
+
+    .row {
+        padding: 15px 0;
+    }
+}
+// PORTFOLIO //
+
+#portfolio {
+    padding: 55px 0;
+    .section-border-top;
+
+    .owl-controls {
+        margin-top: 60px;
+    }
+}
+
+.portfolio-item {
+    width: 100%;
+
+    img {
+        width: 100%;
+        cursor: move;
+    }
+
+    &:hover .portfolio-hover {
+        opacity: 1;
+    }
+
+    &:hover h3 {
+        .translate-3d(0%;0%;0%);
+    }
+
+    &:hover p {
+        .translate-3d(0%;0%;0%);
+    }
+
+    &:hover a {
+        .translate-3d(0%;0%;0%);
+    }
+}
+
+.portfolio-hover {
+    .absolute-one-hundred-size;
+    .center-text;
+    .basic-transition;
+    overflow: hidden;
+    background: @box-portfolio-background;
+    opacity: 0;
+}
+
+.portfolio-hover-inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h3 {
+        .header-mixin(18px;6px;@basic-background);
+        .translate-3d(0%;-400%;0%);
+        .variable-transition(0.6s);
+    }
+
+    p {
+        color: @basic-background;
+        margin-bottom: 20px;
+        .translate-3d(0%;-400%;0%);
+        .variable-transition(0.6s);
+    }
+
+    a {
+        .inline-block;
+        .size(40px;40px);
+        .border-radius-single(50%);
+        border: 1px solid @basic-background;
+        .center-text;
+        margin: 0 5px;
+        .translate-3d(0%;400%;0%);
+        .basic-transition;
+
+        i {
+            line-height: 40px;
+            font-size: 14px;
+            color: @basic-background;
+            .basic-transition;
+        }
+
+        &:hover {
+            background-color: @basic-background;
+        }
+
+        &:hover i {
+            color: @team-color;
+        }
+    }
+
+    a.portfolio-link-left {
+        .variable-transition(0.4s);
+    }
+
+    a.portfolio-link-right {
+        .variable-transition(0.6s);
+    }
+}
+// portfolio-items //
+
+#portfolio-item {
+    .flexslider {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .badge {
+        background: #fff;
+        color: @team-color;
+    }
+}
+// BLOG //
+
+#blog {
+    .col-md-6 {
+        padding: 0;
+    }
+
+    .recent-post {
+        margin: 20px;
+        border: 1px solid @gray-lighter;
+        border-radius: 3px;
+        .transition(all 0.3s ease-out);
+
+        &:hover {
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            margin-top: 0;
+
+            a {
+                color: @team-color;
+
+                &:hover {
+                    text-decoration: none;
+                    color: darken(@team-color,10%);
+                }
+            }
+        }
+
+        img {
+            /* Small devices (tablets, 768px and up) */
+            @media (max-width: @screen-sm-max) {
+                width: 100%;
+            }
+        }
+
+        .recent-post-content {
+            padding: 20px;
+        }
+    }
+
+    .recent-post-info {
+        margin-bottom: 8px;
+
+        .fa {
+            margin-right: 3px;
+        }
+
+        span {
+            margin-right: 10px;
+        }
+    }
+    // single post
+    .post-image {
+        float: left;
+        margin: 0 12px 4px 0;
+    }
+
+    .categories,
+    .newest-post {
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories li,
+    .newest-post li {
+        list-style-type: none;
+        margin: 0;
+        padding: 3px 0;
+    }
+
+    .newest-post li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .tag-cloud {
+        .btn {
+            margin-bottom: 3px;
+        }
+    }
+}
+// NEWSLETTER //
+
+#newsletter {
+    text-align: center;
+    background: linear-gradient(48deg, #d94015, #333333);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+    @keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+    padding: 30px 0;
+
+    h2 {
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        font-size: 28px;
+    }
+
+    .subscribe-form {
+        width: 280px;
+        margin: 0 auto;
+    }
+}
+// PRICING TABLES //
+#skills {
+  background-color: @alternative-background;
+
+.container {
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}
+}
+.progress {
+
+  .progress-bar-striped {
+    background: linear-gradient(48deg, #d94015, #333333);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+    @keyframes AnimationName {
+        0% {
+            background-position: 64% 0;
+        }
+
+        50% {
+            background-position: 37% 100%;
+        }
+
+        100% {
+            background-position: 64% 0;
+        }
+    }
+  }
+}
+// CONTACT //
+
+#contact {
+    iframe {
+        max-width: 100%;
+        /* Small devices (tablets, 768px and up) */
+        @media (max-width: @screen-sm-max) {
+            margin-top: 30px;
+        }
+    }
+}
+// FOOTER //
+
+#footer {
+    background-color: #333;
+    color: #999;
+    font-size: 13px;
+
+    a {
+        color: #fff;
+
+        &:hover {
+            color: @team-color;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    h4 {
+        color: #fff;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+        margin: 25px 0 20px;
+    }
+
+    .container {
+        padding-bottom: 15px;
+    }
+    // Company name
+    #company-name {
+        margin-bottom: 12px;
+
+        .fa {
+            font-size: 36px;
+            color: #fff;
+            margin-right: 10px;
+            float: left;
+        }
+
+        p {
+            font-size: 16px;
+            color: @gray-lighter;
+            line-height: 36px;
+        }
+    }
+    // testimonials
+    #testimonials {
+        blockquote {
+            border: 0;
+            font-size: 14px;
+
+            footer {
+                font-size: 90%;
+            }
+        }
+    }
+    // Find us
+    #find-us {
+        a {
+            font-size: 20px;
+            background: @gray;
+            display: block;
+            float: left;
+            .square(40px);
+            text-align: center;
+            line-height: 40px;
+            margin: 0 3px 6px;
+
+            &:hover {
+                background: @gray-lighter;
+            }
+        }
+    }
+
+    #copyright {
+        background: #282828;
+        padding: 12px 0;
+
+        p {
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+// BUTTONS //
+
+.btn-default {
+    background: @team-color;
+    color: #fff;
+    border: 0;
+
+    &:hover {
+        background-color: darken(@team-color,10%);
+    }
+}
+
+.btn-newsletter {
+    color: #fff;
+    background: none;
+    border: 2px solid #fff;
+
+    &:hover {
+        background: #fff;
+        color: @team-color;
+    }
+}
+// ADDITIONAL CLASSES //
+
+.mr5 {
+    margin-right: 15px;
+}
+
+.h05 {
+    height: 5px;
+    width: 100%;
+}
+
+.h10 {
+    height: 10px;
+    width: 100%;
+}
+
+.h15 {
+    height: 15px;
+    width: 100%;
+}
