@@ -10,6 +10,16 @@ $(window).load(function() {
         itemsTablet: [768, 1]
     });
 
+    // viewportchecker
+    $('*[data-animate]').addClass('hide').each(function(){
+      $(this).viewportChecker({
+        classToAdd: 'show animated ' + $(this).data('animate'),
+        classToRemove: 'hide',
+        offset: 200
+      });
+    });
+
+
 
     //.parallax(xPosition, speedFactor, outerHeight) options:
     //xPosition - Horizontal position of the element
